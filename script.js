@@ -12,8 +12,6 @@ const gallery = document.getElementById("gallery");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.getElementById("closeBtn");
-
-// Load gallery images with animation delay
 imageUrls.forEach((url, index) => {
   const img = document.createElement("img");
   img.src = url;
@@ -25,13 +23,9 @@ imageUrls.forEach((url, index) => {
   });
   gallery.appendChild(img);
 });
-
-// Close the lightbox
 closeBtn.addEventListener("click", () => {
   lightbox.style.display = "none";
 });
-
-// Close lightbox when clicking outside the image
 lightbox.addEventListener("click", (e) => {
   if (e.target !== lightboxImg && e.target !== closeBtn) {
     lightbox.style.display = "none";
